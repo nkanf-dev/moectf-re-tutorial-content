@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://moectf.example/schemas/content-update.schema.json",
+  "title": "MoeCTF RE Tutorial Content Update Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contentVersion", "schemaVersion", "files"],
+  "properties": {
+    "contentVersion": { "type": "string", "minLength": 1 },
+    "schemaVersion": { "const": "1" },
+    "minHostVersion": { "type": "string", "default": "0.1.0" },
+    "hostUpdateManifestUrl": { "type": ["string", "null"], "format": "uri" },
+    "notes": { "type": ["string", "null"] },
+    "prune": { "type": "boolean", "default": false },
+    "delete": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/contentPath" },
+      "uniqueItems": true,
+      "default": []
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": { "$ref": "#/$defs/contentPath" },
+          "url": { "type": ["string", "null"] },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-fA-F]{64}$"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "contentPath": {
+      "type": "string",
+      "pattern": "^(courses/|stages/|assets/i18n/|assets/targets/|schemas/)[^\\\\:*?\"<>|]+$",
+      "not": {
+        "anyOf": [
+          { "pattern": "(^|/)\\.\\.(/|$)" },
+          { "pattern": "\\.(pdb|id0|id1|id2|nam|til|idb|i64)$" }
+        ]
+      }
+    }
+  }
+}

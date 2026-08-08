@@ -1,0 +1,12 @@
+﻿{
+    "schemaVersion":  "1",
+    "appVersion":  "0.1.0",
+    "channel":  "stable",
+    "mandatory":  false,
+    "downloadUrl":  null,
+    "releaseNotesUrl":  null,
+    "sha256":  null,
+    "size":  null,
+    "publishedAt":  "2026-08-08T16:56:03.2718491Z",
+    "notes":  "No packaged app update has been published for this content revision."
+}

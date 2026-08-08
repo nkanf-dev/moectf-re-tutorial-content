@@ -12,5 +12,6 @@
   "stagesDir": "stages",
   "i18nDir": "assets/i18n",
   "assetsDir": "assets",
-  "updateManifestUrl": "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/manifest.json"
+  "updateManifestUrl": "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/manifest.json",
+  "appUpdateManifestUrl": "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/app-update.json"
 }
