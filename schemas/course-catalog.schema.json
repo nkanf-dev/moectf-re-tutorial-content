@@ -16,8 +16,10 @@
     "appUpdateManifestUrl": { "type": ["string", "null"], "format": "uri" },
     "courses": {
       "type": "array",
+      "description": "Course manifest paths. Every referenced course manifest must declare its own root compatibility range.",
       "items": {
         "type": "string",
+        "description": "Path to a course manifest validated by course.schema.json, including compatibility.",
         "pattern": "^courses/[A-Za-z0-9][A-Za-z0-9._:-]*(?:/course)?\\.json$"
       },
       "uniqueItems": true

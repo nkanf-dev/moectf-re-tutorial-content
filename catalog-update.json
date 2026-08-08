@@ -1,7 +1,7 @@
 {
     "schemaVersion":  "1",
     "contentVersion":  "1.0.0",
-    "publishedAt":  "2026-08-08T22:23:15.7806078Z",
+    "publishedAt":  "2026-08-08T22:41:49.6362263Z",
     "minHostVersion":  "0.1.0",
     "hostUpdateManifestUrl":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/app-update.json",
     "notes":  "Raw catalog update used to discover and install courses.",
@@ -28,7 +28,7 @@
                   {
                       "path":  "courses/chall1/course.json",
                       "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/course.json",
-                      "sha256":  "c4ef15d2a9da6b42ca65910e410e3776ab6cfc57e7ef52eb3816291205827a97"
+                      "sha256":  "33479ec071568b60c4a06466ac5d440d411e5ad1808a5345e5cf097184adb877"
                   },
                   {
                       "path":  "courses/chall1/assets/media/01-die-analysis.png",
@@ -128,22 +128,22 @@
                   {
                       "path":  "schemas/content-update.schema.json",
                       "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/schemas/content-update.schema.json",
-                      "sha256":  "74f54f57ec842e773ad4ae4796966b75a6ddd6827b88567c592e902bc9b7e4d3"
+                      "sha256":  "98edbe8934ea83d7b1aebc46fb256333f6e618456b61af0bd7fdbf5bb37e613f"
                   },
                   {
                       "path":  "schemas/course-catalog-update.schema.json",
                       "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/schemas/course-catalog-update.schema.json",
-                      "sha256":  "2d40b7681680631678d8293726662e2b377dcfa0984d854206928be3b820b43c"
+                      "sha256":  "f4b4740dd5cf1016a59f5664b2346a6a0128c3c29720eef9178411b6bb97903c"
                   },
                   {
                       "path":  "schemas/course-catalog.schema.json",
                       "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/schemas/course-catalog.schema.json",
-                      "sha256":  "42a10cc7d0eccba7422031654c9d38a6a35a6a95a32c77fe0b7aa92c416e209e"
+                      "sha256":  "b190254d7787325355171eaa07b532c04fad1caedbfb77f8e85074faf7517bf3"
                   },
                   {
                       "path":  "schemas/course.schema.json",
                       "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/schemas/course.schema.json",
-                      "sha256":  "b0e2f8ee08ba2bb2140659b80e9411f57ff9438320f205db740bea1376467d05"
+                      "sha256":  "31a9214cd37aebe995fc2aee3a9b8815e12ff82b3161917d53bc21857e9f9a9c"
                   },
                   {
                       "path":  "schemas/guide-stage.schema.json",

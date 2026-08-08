@@ -1,7 +1,11 @@
 {
     "schemaVersion":  "1",
     "id":  "chall1",
-    "version":  "1.0.1",
+    "version":  "1.0.2",
+    "compatibility":  {
+                          "minHostVersion":  "0.1.0",
+                          "maxHostVersionExclusive":  "0.2.0"
+                      },
     "status":  "published",
     "metadata":  {
                      "title":  "chall1：第一次逆向实践",

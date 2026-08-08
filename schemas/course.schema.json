@@ -5,7 +5,7 @@
   "description": "Runtime course manifest. It declares course metadata, changelog, requirements, and stage flow. Per-step external-window locators, triggers, and deviations stay in guide-stage.schema.json.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "id", "version", "metadata", "requirements", "flow"],
+  "required": ["schemaVersion", "id", "version", "compatibility", "metadata", "requirements", "flow"],
   "properties": {
     "schemaVersion": { "const": "1" },
     "id": { "$ref": "#/$defs/id" },
@@ -15,6 +15,7 @@
       "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
     },
     "status": { "enum": ["draft", "preview", "published", "archived"], "default": "draft" },
+    "compatibility": { "$ref": "#/$defs/hostCompatibility" },
     "metadata": { "$ref": "#/$defs/metadata" },
     "changelog": {
       "type": "array",
@@ -28,6 +29,19 @@
     "appUpdateManifestUrl": { "type": ["string", "null"], "format": "uri" }
   },
   "$defs": {
+    "hostVersion": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+    },
+    "hostCompatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minHostVersion", "maxHostVersionExclusive"],
+      "properties": {
+        "minHostVersion": { "$ref": "#/$defs/hostVersion" },
+        "maxHostVersionExclusive": { "$ref": "#/$defs/hostVersion" }
+      }
+    },
     "id": {
       "type": "string",
       "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
