@@ -5,8 +5,8 @@
     "mandatory":  false,
     "downloadUrl":  "https://github.com/nkanf-dev/moectf-re-tutorial-content/releases/download/app-v0.1.0/MoeCTF.RE.Tutorial.exe",
     "releaseNotesUrl":  null,
-    "sha256":  "511c0f32e7e680aa7ec6d46b7c78feda74bb8d4e7011f7d9313fc7f7b068cd64",
-    "size":  2647686,
-    "publishedAt":  "2026-08-08T22:41:04.2006985Z",
+    "sha256":  "ab07aa91c89c1f09c3a09ea6fbf11d0cb4925d157fba4ddba23ae948037db6ab",
+    "size":  2649222,
+    "publishedAt":  "2026-08-08T22:46:10.3924613Z",
     "notes":  "MoeCTF Reverse Engineering Guide desktop package. Requires .NET 8 Desktop Runtime x64."
 }
