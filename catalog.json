@@ -1,13 +1,13 @@
-﻿{
+{
     "schemaVersion":  "1",
     "catalogVersion":  "1.0.0",
-    "publishedAt":  "2026-08-08T22:08:49.2647225Z",
+    "publishedAt":  "2026-08-08T22:23:15.7806078Z",
     "catalogUpdateManifestUrl":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/catalog-update.json",
     "appUpdateManifestUrl":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/app-update.json",
     "courses":  [
                     {
                         "id":  "chall1",
-                        "version":  "1.0.0",
+                        "version":  "1.0.1",
                         "manifest":  "courses/chall1/course.json",
                         "updateManifestUrl":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/update.json",
                         "appUpdateManifestUrl":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/app-update.json"

@@ -1,7 +1,7 @@
-﻿{
+{
     "schemaVersion":  "1",
     "contentVersion":  "1.0.0",
-    "publishedAt":  "2026-08-08T22:08:49.2647225Z",
+    "publishedAt":  "2026-08-08T22:23:15.7806078Z",
     "minHostVersion":  "0.1.0",
     "hostUpdateManifestUrl":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/app-update.json",
     "notes":  "Raw catalog update used to discover and install courses.",
@@ -23,12 +23,12 @@
                   {
                       "path":  "courses/index.json",
                       "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/index.json",
-                      "sha256":  "edf7f3e955d8dae9fb9f4b01e79bb5ce88e4d88cfea6b29886c2665093c1bac0"
+                      "sha256":  "ecb43bf866512dffff2c507f8e922ef46e5f2b8cf4efa4d5e4e4f70a697dccef"
                   },
                   {
                       "path":  "courses/chall1/course.json",
                       "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/course.json",
-                      "sha256":  "b71544f34c44efeddc2d82b1ab4a4678e42bf6ffec4def333d3fa5ecdf91179b"
+                      "sha256":  "c4ef15d2a9da6b42ca65910e410e3776ab6cfc57e7ef52eb3816291205827a97"
                   },
                   {
                       "path":  "courses/chall1/assets/media/01-die-analysis.png",

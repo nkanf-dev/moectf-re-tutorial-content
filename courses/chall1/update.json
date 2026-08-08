@@ -1,8 +1,8 @@
-﻿{
+{
     "schemaVersion":  "1",
     "courseId":  "chall1",
-    "courseVersion":  "1.0.0",
-    "publishedAt":  "2026-08-08T22:08:49.2647225Z",
+    "courseVersion":  "1.0.1",
+    "publishedAt":  "2026-08-08T22:23:15.7806078Z",
     "minHostVersion":  "0.1.0",
     "hostUpdateManifestUrl":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/app-update.json",
     "notes":  "Independent raw update for course chall1.",
@@ -74,7 +74,7 @@
                   {
                       "path":  "courses/chall1/course.json",
                       "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/course.json",
-                      "sha256":  "b71544f34c44efeddc2d82b1ab4a4678e42bf6ffec4def333d3fa5ecdf91179b"
+                      "sha256":  "c4ef15d2a9da6b42ca65910e410e3776ab6cfc57e7ef52eb3816291205827a97"
                   },
                   {
                       "path":  "courses/chall1/i18n/en-US.json",
