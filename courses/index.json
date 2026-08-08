@@ -4,6 +4,6 @@
     "courses":  [
                     "courses/chall1/course.json"
                 ],
-    "catalogUpdateManifestUrl":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/catalog-update.json",
-    "appUpdateManifestUrl":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/app-update.json"
+    "catalogUpdateManifestUrl":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/refs/heads/main/catalog-update.json",
+    "appUpdateManifestUrl":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/refs/heads/main/app-update.json"
 }
