@@ -1,0 +1,256 @@
+﻿{
+    "id":  "stage1",
+    "order":  1,
+    "titleKey":  "stage1.title",
+    "goalKey":  "stage1.goal",
+    "answerKey":  "stage1.flag",
+    "fakeAnswerKeys":  [
+                           "stage1.flag_fake"
+                       ],
+    "targets":  [
+                    "abb3c03d7a56.exe"
+                ],
+    "tools":  [
+                  "die",
+                  "ida"
+              ],
+    "guideMode":  "on_fake_or_next",
+    "freeExploreTextKey":  "stage1.hint.explore",
+    "steps": [
+        {
+            "id": "open_ida",
+            "textKey": "stage1.step.open_ida",
+            "action": "none",
+            "tool": "ida",
+            "file": "abb3c03d7a56.exe",
+            "guide": {
+                "target": { "scope": "host", "key": "tool:ida" },
+                "locators": [
+                    { "strategy": "host", "scope": "host", "key": "tool:ida" }
+                ],
+                "overlay": { "placement": "auto", "padding": 6, "gap": 14 },
+                "fallback": { "scope": "host", "key": "coach" }
+            }
+        },
+        {
+            "id": "open_strings",
+            "textKey": "stage1.step.open_strings",
+            "action": "none",
+            "tool": "ida",
+            "guide": {
+                "target": { "scope": "process", "process": "tool:ida", "adapter": "ida" },
+                "locators": [
+                    {
+                        "strategy": "rect",
+                        "scope": "process",
+                        "process": "tool:ida",
+                        "adapter": "ida",
+                        "rect": { "space": "window", "x": 0.12, "y": 0.02, "width": 0.12, "height": 0.06 }
+                    },
+                    {
+                        "strategy": "uia",
+                        "scope": "process",
+                        "process": "tool:ida",
+                        "adapter": "ida",
+                        "state": "main",
+                        "role": "menu_view",
+                        "fallbackToWindow": true,
+                        "maxNodes": 1500,
+                        "timeoutMs": 800
+                    }
+                ],
+                "overlay": { "placement": "bottom", "padding": 6, "gap": 14 },
+                "fallback": { "scope": "host", "key": "coach" }
+            },
+            "trigger": {
+                "kind": "locator_found",
+                "locator": {
+                    "strategy": "uia",
+                    "scope": "process",
+                    "process": "tool:ida",
+                    "adapter": "ida",
+                    "state": "main",
+                    "role": "functions_view",
+                    "contentContains": [ "check_flag", "WinMain" ],
+                    "requireAllNameContains": true,
+                    "fallbackToWindow": false,
+                    "maxNodes": 1500,
+                    "timeoutMs": 800
+                }
+            }
+        },
+        {
+            "id": "two_flags",
+            "textKey": "stage1.hint.two_flags",
+            "action": "none",
+            "tool": "ida",
+            "guide": {
+                "target": { "scope": "process", "process": "tool:ida", "adapter": "ida" },
+                "locators": [
+                    {
+                        "strategy": "rect",
+                        "scope": "process",
+                        "process": "tool:ida",
+                        "adapter": "ida",
+                        "rect": { "space": "window", "x": 0.05, "y": 0.14, "width": 0.58, "height": 0.72 }
+                    },
+                    {
+                        "strategy": "uia",
+                        "scope": "process",
+                        "process": "tool:ida",
+                        "adapter": "ida",
+                        "state": "strings",
+                        "role": "strings_view",
+                        "contentContains": [ "flag{" ],
+                        "contentMode": "target",
+                        "fallbackToWindow": false,
+                        "maxNodes": 1200,
+                        "timeoutMs": 650
+                    }
+                ],
+                "overlay": { "placement": "right", "padding": 6, "gap": 14 },
+                "fallback": { "scope": "host", "key": "coach" }
+            },
+            "trigger": {
+                "kind": "locator_found",
+                "locator": {
+                    "strategy": "uia",
+                    "scope": "process",
+                    "process": "tool:ida",
+                    "adapter": "ida",
+                    "state": "strings",
+                    "role": "strings_view",
+                    "contentContains": [ "flag{tru3_br4nch_k33ps_qu13t}", "flag{f4ls3_br4nch_1s_n01sy}" ],
+                    "requireAllNameContains": true,
+                    "fallbackToWindow": false,
+                    "maxNodes": 1500,
+                    "timeoutMs": 800
+                }
+            },
+            "branches": [
+                {
+                    "trigger": "fake_flag",
+                    "when": { "kind": "value_equals", "key": "flag", "valueKey": "stage1.flag_fake" },
+                    "next": "read_branches"
+                }
+            ]
+        },
+        {
+            "id": "jump_xrefs",
+            "textKey": "stage1.step.jump_xrefs",
+            "action": "none",
+            "tool": "ida",
+            "guide": {
+                "target": { "scope": "process", "process": "tool:ida", "adapter": "ida" },
+                "locators": [
+                    {
+                        "strategy": "rect",
+                        "scope": "process",
+                        "process": "tool:ida",
+                        "adapter": "ida",
+                        "rect": { "space": "window", "x": 0.05, "y": 0.14, "width": 0.58, "height": 0.72 }
+                    },
+                    {
+                        "strategy": "uia",
+                        "scope": "process",
+                        "process": "tool:ida",
+                        "adapter": "ida",
+                        "state": "strings",
+                        "role": "strings_view",
+                        "contentContains": [ "flag{" ],
+                        "contentMode": "target",
+                        "fallbackToWindow": false,
+                        "maxNodes": 1200,
+                        "timeoutMs": 650
+                    }
+                ],
+                "overlay": { "placement": "right", "padding": 6, "gap": 14 },
+                "fallback": { "scope": "host", "key": "coach" }
+            }
+        },
+        {
+            "id": "read_branches",
+            "textKey": "stage1.step.read_branches",
+            "action": "none",
+            "tool": "ida",
+            "file": "abb3c03d7a56.exe",
+            "guide": {
+                "target": { "scope": "process", "process": "tool:ida", "adapter": "ida" },
+                "locators": [
+                    {
+                        "strategy": "rect",
+                        "scope": "process",
+                        "process": "tool:ida",
+                        "adapter": "ida",
+                        "rect": { "space": "window", "x": 0.22, "y": 0.14, "width": 0.70, "height": 0.72 }
+                    },
+                    {
+                        "strategy": "uia",
+                        "scope": "process",
+                        "process": "tool:ida",
+                        "adapter": "ida",
+                        "state": "pseudocode",
+                        "role": "pseudocode",
+                        "contentContains": [ "Correct" ],
+                        "contentMode": "target",
+                        "fallbackToWindow": true,
+                        "maxNodes": 1200,
+                        "timeoutMs": 650
+                    }
+                ],
+                "overlay": { "placement": "left", "padding": 6, "gap": 14 },
+                "fallback": { "scope": "host", "key": "coach" }
+            },
+            "trigger": {
+                "kind": "any",
+                "any": [
+                    {
+                        "kind": "locator_found",
+                        "locator": {
+                            "strategy": "uia",
+                            "scope": "process",
+                            "process": "tool:ida",
+                            "adapter": "ida",
+                            "state": "pseudocode",
+                            "role": "pseudocode",
+                            "contentContains": [ "Correct", "Wrong door" ],
+                            "requireAllNameContains": true,
+                            "fallbackToWindow": false,
+                            "maxNodes": 1500,
+                            "timeoutMs": 800
+                        }
+                    },
+                    {
+                        "kind": "locator_found",
+                        "locator": {
+                            "strategy": "uia",
+                            "scope": "process",
+                            "process": "tool:ida",
+                            "adapter": "ida",
+                            "state": "disassembly",
+                            "role": "disassembly",
+                            "contentContains": [ "strcmp", "Wrong door" ],
+                            "requireAllNameContains": true,
+                            "fallbackToWindow": false,
+                            "maxNodes": 1800,
+                            "timeoutMs": 850
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": "submit_true",
+            "textKey": "stage1.step.submit_true",
+            "action": "none",
+            "guide": {
+                "target": { "scope": "host", "key": "flag" },
+                "locators": [
+                    { "strategy": "host", "scope": "host", "key": "flag" }
+                ],
+                "overlay": { "placement": "top", "padding": 6, "gap": 14 },
+                "fallback": { "scope": "host", "key": "coach" }
+            }
+        }
+    ]
+}

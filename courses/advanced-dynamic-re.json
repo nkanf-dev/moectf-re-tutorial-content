@@ -1,0 +1,15 @@
+{
+  "id": "advanced-dynamic-re",
+  "title": "逆向工程进阶：动态调试",
+  "subtitle": "x64dbg 与运行时状态观察",
+  "summary": "后续进阶课程使用。聚焦运行时生成内容、断点、内存窗口和动态状态确认，不放入当前新生静态入门第一版。",
+  "version": "2026.0.0-draft",
+  "track": "逆向工程",
+  "difficulty": "进阶",
+  "status": "draft",
+  "stageCount": 2,
+  "estimatedMinutes": 45,
+  "stagesDir": "stages/dynamic",
+  "i18nDir": "assets/i18n",
+  "assetsDir": "assets"
+}

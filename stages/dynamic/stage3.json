@@ -1,0 +1,634 @@
+﻿{
+    "id":  "stage3",
+    "order":  3,
+    "titleKey":  "stage3.title",
+    "goalKey":  "stage3.goal",
+    "answerKey":  "stage3.flag",
+    "fakeAnswerKeys":  [
+
+                       ],
+    "targets":  [
+                    "033719085d5d.exe"
+                ],
+    "tools":  [
+                  "die",
+                  "ida",
+                  "x64dbg"
+              ],
+    "guideMode":  "forced",
+    "deviations":  [
+                       {
+                           "id":  "x64dbg_system_break",
+                           "textKey":  "stage3.deviation.x64dbg_system_break",
+                           "priority":  60,
+                           "when":  {
+                                        "kind":  "locator_found",
+                                        "locator":  {
+                                                        "strategy":  "fast",
+                                                        "scope":  "process",
+                                                        "process":  "tool:x64dbg",
+                                                        "adapter":  "x64dbg",
+                                                        "titlePidFromProcess":  "target:033719085d5d.exe",
+                                                        "state":  "system_break",
+                                                        "role":  "run_button",
+                                                        "fallbackToWindow":  true,
+                                                        "maxNodes":  1500,
+                                                        "timeoutMs":  700
+                                                    }
+                                    },
+                           "guide":  {
+                                         "target":  {
+                                                        "scope":  "process",
+                                                        "process":  "tool:x64dbg",
+                                                        "adapter":  "x64dbg"
+                                                    },
+                                         "locators":  [
+                                                          {
+                                                              "strategy":  "fast",
+                                                              "scope":  "process",
+                                                              "process":  "tool:x64dbg",
+                                                              "adapter":  "x64dbg",
+                                                              "titlePidFromProcess":  "target:033719085d5d.exe",
+                                                              "state":  "system_break",
+                                                              "role":  "run_button",
+                                                              "fallbackToWindow":  true,
+                                                              "maxNodes":  1500,
+                                                              "timeoutMs":  700
+                                                          }
+                                                      ],
+                                         "overlay":  {
+                                                         "placement":  "bottom",
+                                                         "padding":  6,
+                                                         "gap":  14
+                                                     },
+                                         "fallback":  {
+                                                          "scope":  "host",
+                                                          "key":  "coach"
+                                                      }
+                                     }
+                       },
+                       {
+                           "id":  "x64dbg_module_break",
+                           "textKey":  "stage3.deviation.x64dbg_module_break",
+                           "priority":  58,
+                           "when":  {
+                                        "kind":  "locator_found",
+                                        "locator":  {
+                                                        "strategy":  "fast",
+                                                        "scope":  "process",
+                                                        "process":  "tool:x64dbg",
+                                                        "adapter":  "x64dbg",
+                                                        "titlePidFromProcess":  "target:033719085d5d.exe",
+                                                        "state":  "module_break",
+                                                        "role":  "run_button",
+                                                        "fallbackToWindow":  true,
+                                                        "maxNodes":  1500,
+                                                        "timeoutMs":  700
+                                                    }
+                                    },
+                           "guide":  {
+                                         "target":  {
+                                                        "scope":  "process",
+                                                        "process":  "tool:x64dbg",
+                                                        "adapter":  "x64dbg"
+                                                    },
+                                         "locators":  [
+                                                          {
+                                                              "strategy":  "fast",
+                                                              "scope":  "process",
+                                                              "process":  "tool:x64dbg",
+                                                              "adapter":  "x64dbg",
+                                                              "titlePidFromProcess":  "target:033719085d5d.exe",
+                                                              "state":  "module_break",
+                                                              "role":  "run_button",
+                                                              "fallbackToWindow":  true,
+                                                              "maxNodes":  1500,
+                                                              "timeoutMs":  700
+                                                          }
+                                                      ],
+                                         "overlay":  {
+                                                         "placement":  "bottom",
+                                                         "padding":  6,
+                                                         "gap":  14
+                                                     },
+                                         "fallback":  {
+                                                          "scope":  "host",
+                                                          "key":  "coach"
+                                                      }
+                                     }
+                       }
+                   ],
+    "steps":  [
+                  {
+                      "id":  "no_plain",
+                      "textKey":  "stage3.hint.no_plain_flag",
+                      "action":  "none",
+                      "guide":  {
+                                    "target":  {
+                                                   "scope":  "host",
+                                                   "key":  "target:033719085d5d.exe"
+                                               },
+                                    "locators":  [
+                                                     {
+                                                         "strategy":  "host",
+                                                         "scope":  "host",
+                                                         "key":  "target:033719085d5d.exe"
+                                                     }
+                                                 ],
+                                    "overlay":  {
+                                                    "placement":  "auto",
+                                                    "padding":  6,
+                                                    "gap":  14
+                                                },
+                                    "fallback":  {
+                                                     "scope":  "host",
+                                                     "key":  "coach"
+                                                 }
+                                }
+                  },
+                  {
+                      "id":  "search_ok",
+                      "textKey":  "stage3.step.search_success_text",
+                      "action":  "none",
+                      "tool":  "ida",
+                      "file":  "033719085d5d.exe",
+                      "guide":  {
+                                    "target":  {
+                                                   "scope":  "process",
+                                                   "process":  "tool:ida",
+                                                   "adapter":  "ida"
+                                               },
+                                    "locators":  [
+                                                     {
+                                                         "strategy":  "rect",
+                                                         "scope":  "process",
+                                                         "process":  "tool:ida",
+                                                         "adapter":  "ida",
+                                                         "rect":  {
+                                                                       "space":  "window",
+                                                                       "x":  0.05,
+                                                                       "y":  0.14,
+                                                                       "width":  0.58,
+                                                                       "height":  0.72
+                                                                   }
+                                                     },
+                                                     {
+                                                         "strategy":  "fast",
+                                                         "scope":  "process",
+                                                         "process":  "tool:ida",
+                                                         "adapter":  "ida",
+                                                         "state":  "strings",
+                                                         "role":  "strings_view",
+                                                         "contentContains":  [
+                                                                                 "FLAG OK"
+                                                                             ],
+                                                         "contentMode":  "target",
+                                                         "fallbackToWindow":  false,
+                                                         "maxNodes":  1200,
+                                                         "timeoutMs":  650
+                                                     },
+                                                     {
+                                                         "strategy":  "host",
+                                                         "scope":  "host",
+                                                         "key":  "tool:ida"
+                                                     }
+                                                 ],
+                                    "overlay":  {
+                                                    "placement":  "auto",
+                                                    "padding":  6,
+                                                    "gap":  14
+                                                },
+                                    "fallback":  {
+                                                     "scope":  "host",
+                                                     "key":  "coach"
+                                     }
+                                }
+                  },
+                  {
+                      "id":  "xref_success",
+                      "textKey":  "stage3.step.xref_success_text",
+                      "action":  "none",
+                      "tool":  "ida",
+                      "guide":  {
+                                    "target":  {
+                                                   "scope":  "process",
+                                                   "process":  "tool:ida",
+                                                   "adapter":  "ida"
+                                               },
+                                    "locators":  [
+                                                     {
+                                                         "strategy":  "rect",
+                                                         "scope":  "process",
+                                                         "process":  "tool:ida",
+                                                         "adapter":  "ida",
+                                                         "rect":  {
+                                                                       "space":  "window",
+                                                                       "x":  0.05,
+                                                                       "y":  0.14,
+                                                                       "width":  0.58,
+                                                                       "height":  0.72
+                                                                   }
+                                                     },
+                                                     {
+                                                         "strategy":  "uia",
+                                                         "scope":  "process",
+                                                         "process":  "tool:ida",
+                                                         "adapter":  "ida",
+                                                         "state":  "strings",
+                                                         "role":  "strings_view",
+                                                         "contentContains":  [
+                                                                                 "FLAG OK"
+                                                                             ],
+                                                         "contentMode":  "target",
+                                                         "fallbackToWindow":  false,
+                                                         "maxNodes":  1200,
+                                                         "timeoutMs":  650
+                                                     }
+                                                  ],
+                                    "overlay":  {
+                                                    "placement":  "right",
+                                                    "padding":  6,
+                                                    "gap":  14
+                                                },
+                                    "fallback":  {
+                                                     "scope":  "host",
+                                                     "key":  "coach"
+                                                 }
+                                }
+                  },
+                  {
+                      "id":  "observe_noise",
+                      "textKey":  "stage3.step.observe_noise",
+                      "action":  "none",
+                      "tool":  "ida",
+                      "guide":  {
+                                    "target":  {
+                                                   "scope":  "process",
+                                                   "process":  "tool:ida"
+                                               },
+                                    "locators":  [
+                                                     {
+                                                         "strategy":  "rect",
+                                                         "scope":  "process",
+                                                         "process":  "tool:ida",
+                                                         "adapter":  "ida",
+                                                         "rect":  {
+                                                                       "space":  "window",
+                                                                       "x":  0.22,
+                                                                       "y":  0.14,
+                                                                       "width":  0.70,
+                                                                       "height":  0.72
+                                                                   }
+                                                     },
+                                                     {
+                                                          "strategy":  "fast",
+                                                         "scope":  "process",
+                                                         "process":  "tool:ida",
+                                                         "nameContains":  [
+                                                                              "FLAG OK",
+                                                                              "Search",
+                                                                              "String",
+                                                                              "Strings",
+                                                                              "IDA",
+                                                                              "Functions",
+                                                                              "View"
+                                                                          ],
+                                                         "contentContains":  [
+                                                                                 "FLAG OK"
+                                                                             ],
+                                                         "contentMode":  "target",
+                                                         "fallbackToWindow":  false,
+                                                         "maxNodes":  1200,
+                                                         "timeoutMs":  650,
+                                                         "controlType":  "Text",
+                                                         "adapter":  "ida",
+                                                         "role":  "strings_view"
+                                                     }
+                                                 ],
+                                    "overlay":  {
+                                                    "placement":  "auto",
+                                                    "padding":  6,
+                                                    "gap":  14
+                                                },
+                                    "fallback":  {
+                                                     "scope":  "host",
+                                                     "key":  "coach"
+                                                 }
+                                }
+                  },
+                  {
+                      "id":  "runtime_marker",
+                      "textKey":  "stage3.step.runtime_marker",
+                      "action":  "none",
+                      "guide":  {
+                                    "target":  {
+                                                   "scope":  "host",
+                                                   "key":  "coach"
+                                               },
+                                    "locators":  [
+                                                     {
+                                                         "strategy":  "host",
+                                                         "scope":  "host",
+                                                         "key":  "coach"
+                                                     }
+                                                 ],
+                                    "overlay":  {
+                                                    "placement":  "auto",
+                                                    "padding":  6,
+                                                    "gap":  14
+                                                },
+                                    "fallback":  {
+                                                     "scope":  "host",
+                                                     "key":  "coach"
+                                                 }
+                                }
+                  },
+                  {
+                      "id":  "open_x64dbg",
+                      "textKey":  "stage3.step.open_x64dbg",
+                      "action":  "none",
+                      "tool":  "x64dbg",
+                      "file":  "033719085d5d.exe",
+                      "guide":  {
+                                    "target":  {
+                                                   "scope":  "host",
+                                                   "key":  "tool:x64dbg"
+                                               },
+                                    "locators":  [
+                                                     {
+                                                         "strategy":  "host",
+                                                         "scope":  "host",
+                                                         "key":  "tool:x64dbg"
+                                                     }
+                                                 ],
+                                    "overlay":  {
+                                                    "placement":  "auto",
+                                                    "padding":  6,
+                                                    "gap":  14
+                                                },
+                                    "fallback":  {
+                                                     "scope":  "host",
+                                                     "key":  "coach"
+                                     }
+                                }
+                  },
+                  {
+                      "id":  "load_x64dbg_sample",
+                      "textKey":  "stage3.step.load_x64dbg_sample",
+                      "action":  "none",
+                      "tool":  "x64dbg",
+                      "file":  "033719085d5d.exe",
+                      "guide":  {
+                                    "target":  {
+                                                   "scope":  "host",
+                                                   "key":  "target:033719085d5d.exe"
+                                               },
+                                    "locators":  [
+                                                     {
+                                                         "strategy":  "host",
+                                                         "scope":  "host",
+                                                         "key":  "target:033719085d5d.exe"
+                                                     }
+                                                 ],
+                                    "overlay":  {
+                                                    "placement":  "left",
+                                                    "padding":  6,
+                                                    "gap":  14
+                                                },
+                                    "fallback":  {
+                                                     "scope":  "host",
+                                                     "key":  "coach"
+                                                 }
+                                }
+                  },
+                  {
+                      "id":  "find_module_base",
+                      "textKey":  "stage3.step.find_module_base",
+                      "action":  "none",
+                      "tool":  "x64dbg",
+                      "guide":  {
+                                    "target":  {
+                                                   "scope":  "process",
+                                                   "process":  "tool:x64dbg"
+                                               },
+                                    "locators":  [
+                                                     {
+                                                          "strategy":  "fast",
+                                                          "scope":  "process",
+                                                          "process":  "tool:x64dbg",
+                                                         "titlePidFromProcess":  "target:033719085d5d.exe",
+                                                         "state":  "cpu",
+                                                         "nameContains":  [
+                                                                              "内存布局",
+                                                                              "Memory Map",
+                                                                              "033719085d5d.exe"
+                                                                          ],
+                                                         "fallbackToWindow":  true,
+                                                         "maxNodes":  1500,
+                                                         "timeoutMs":  700,
+                                                         "controlType":  "TabItem",
+                                                         "adapter":  "x64dbg",
+                                                         "role":  "memory_map"
+                                                     }
+                                                 ],
+                                    "overlay":  {
+                                                    "placement":  "auto",
+                                                    "padding":  6,
+                                                    "gap":  14
+                                                },
+                                    "fallback":  {
+                                                     "scope":  "host",
+                                                     "key":  "coach"
+                                                 }
+                                }
+                  },
+                  {
+                      "id":  "goto_decode",
+                      "textKey":  "stage3.step.goto_decode",
+                      "action":  "none",
+                      "tool":  "x64dbg",
+                      "guide":  {
+                                    "target":  {
+                                                   "scope":  "process",
+                                                   "process":  "tool:x64dbg"
+                                               },
+                                    "locators":  [
+                                                     {
+                                                         "strategy":  "fast",
+                                                         "scope":  "process",
+                                                         "process":  "tool:x64dbg",
+                                                         "titlePidFromProcess":  "target:033719085d5d.exe",
+                                                         "state":  "command",
+                                                         "nameContains":  [
+                                                                              "命令栏",
+                                                                              "命令:",
+                                                                              "Command"
+                                                                          ],
+                                                         "fallbackToWindow":  true,
+                                                         "maxNodes":  1500,
+                                                         "timeoutMs":  700,
+                                                         "controlType":  "ToolBar",
+                                                         "adapter":  "x64dbg",
+                                                         "role":  "command_bar"
+                                                     }
+                                                 ],
+                                    "overlay":  {
+                                                    "placement":  "auto",
+                                                    "padding":  6,
+                                                    "gap":  14
+                                                },
+                                    "fallback":  {
+                                                     "scope":  "host",
+                                                     "key":  "coach"
+                                                 }
+                                }
+                  },
+                  {
+                      "id":  "bp_and_run",
+                      "textKey":  "stage3.step.bp_and_run",
+                      "action":  "none",
+                      "tool":  "x64dbg",
+                      "guide":  {
+                                    "target":  {
+                                                   "scope":  "process",
+                                                   "process":  "tool:x64dbg"
+                                               },
+                                    "locators":  [
+                                                     {
+                                                         "strategy":  "fast",
+                                                         "scope":  "process",
+                                                         "process":  "tool:x64dbg",
+                                                         "titlePidFromProcess":  "target:033719085d5d.exe",
+                                                         "state":  "cpu",
+                                                         "nameContains":  [
+                                                                              "运行",
+                                                                              "Run",
+                                                                              "Debug"
+                                                                          ],
+                                                         "fallbackToWindow":  true,
+                                                         "maxNodes":  1500,
+                                                         "timeoutMs":  700,
+                                                         "controlType":  "Button",
+                                                         "adapter":  "x64dbg",
+                                                         "role":  "run_button"
+                                                     }
+                                                 ],
+                                    "overlay":  {
+                                                    "placement":  "auto",
+                                                    "padding":  6,
+                                                    "gap":  14
+                                                },
+                                    "fallback":  {
+                                                     "scope":  "host",
+                                                     "key":  "coach"
+                                                 }
+                                }
+                  },
+                  {
+                      "id":  "click_generate",
+                      "textKey":  "stage3.step.click_generate",
+                      "action":  "none",
+                      "file":  "033719085d5d.exe",
+                      "guide":  {
+                                    "target":  {
+                                                   "scope":  "process",
+                                                   "process":  "target:033719085d5d.exe"
+                                               },
+                                    "locators":  [
+                                                     {
+                                                         "strategy":  "uia",
+                                                         "scope":  "process",
+                                                         "process":  "target:033719085d5d.exe",
+                                                         "nameContains":  [
+                                                                              "Generate"
+                                                                          ],
+                                                         "fallbackToWindow":  true,
+                                                          "maxNodes":  1200,
+                                                          "timeoutMs":  700,
+                                                         "controlType":  "Button",
+                                                         "adapter":  "win32",
+                                                         "role":  "button_generate"
+                                                     }
+                                                 ],
+                                    "overlay":  {
+                                                    "placement":  "auto",
+                                                    "padding":  6,
+                                                    "gap":  14
+                                                },
+                                    "fallback":  {
+                                                     "scope":  "host",
+                                                     "key":  "coach"
+                                                 }
+                                }
+                  },
+                  {
+                      "id":  "dump_flag",
+                      "textKey":  "stage3.step.dump_flag",
+                      "action":  "none",
+                      "tool":  "x64dbg",
+                      "guide":  {
+                                    "target":  {
+                                                   "scope":  "process",
+                                                   "process":  "tool:x64dbg"
+                                               },
+                                    "locators":  [
+                                                     {
+                                                         "strategy":  "fast",
+                                                         "scope":  "process",
+                                                         "process":  "tool:x64dbg",
+                                                         "titlePidFromProcess":  "target:033719085d5d.exe",
+                                                         "state":  "dump",
+                                                         "nameContains":  [
+                                                                              "内存窗口",
+                                                                              "内存 1",
+                                                                              "Dump",
+                                                                              "Memory"
+                                                                          ],
+                                                         "fallbackToWindow":  true,
+                                                         "maxNodes":  1500,
+                                                         "timeoutMs":  700,
+                                                         "controlType":  "Table",
+                                                         "adapter":  "x64dbg",
+                                                         "role":  "dump_pane"
+                                                     }
+                                                 ],
+                                    "overlay":  {
+                                                    "placement":  "auto",
+                                                    "padding":  6,
+                                                    "gap":  14
+                                                },
+                                    "fallback":  {
+                                                     "scope":  "host",
+                                                     "key":  "coach"
+                                                 }
+                                }
+                  },
+                  {
+                      "id":  "submit_flag",
+                      "textKey":  "stage3.step.submit_flag",
+                      "action":  "none",
+                      "guide":  {
+                                    "target":  {
+                                                   "scope":  "host",
+                                                   "key":  "flag"
+                                               },
+                                    "locators":  [
+                                                     {
+                                                         "strategy":  "host",
+                                                         "scope":  "host",
+                                                         "key":  "flag"
+                                                     }
+                                                 ],
+                                    "overlay":  {
+                                                    "placement":  "top",
+                                                    "padding":  6,
+                                                    "gap":  14
+                                                },
+                                    "fallback":  {
+                                                     "scope":  "host",
+                                                     "key":  "coach"
+                                                 }
+                                }
+                  }
+              ]
+}
