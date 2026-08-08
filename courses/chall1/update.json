@@ -2,7 +2,7 @@
     "schemaVersion":  "1",
     "courseId":  "chall1",
     "courseVersion":  "1.0.2",
-    "publishedAt":  "2026-08-08T22:50:51.8436982Z",
+    "publishedAt":  "2026-08-08T22:53:58.9623335Z",
     "minHostVersion":  "0.1.0",
     "maxHostVersionExclusive":  "0.2.0",
     "hostUpdateManifestUrl":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/refs/heads/main/app-update.json",
