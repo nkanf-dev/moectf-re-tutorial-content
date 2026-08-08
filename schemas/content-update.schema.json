@@ -39,11 +39,12 @@
   "$defs": {
     "contentPath": {
       "type": "string",
-      "pattern": "^(courses/|stages/|assets/i18n/|assets/targets/|schemas/)[^\\\\:*?\"<>|]+$",
+      "pattern": "^(courses/|stages/|assets/i18n/|assets/media/|schemas/)[^\\\\:*?\"<>|]+$",
       "not": {
         "anyOf": [
           { "pattern": "(^|/)\\.\\.(/|$)" },
-          { "pattern": "\\.(pdb|id0|id1|id2|nam|til|idb|i64)$" }
+          { "pattern": "\\.(exe|dll|pdb|id0|id1|id2|nam|til|idb|i64)$" },
+          { "pattern": "\\.(deps|runtimeconfig)\\.json$" }
         ]
       }
     }

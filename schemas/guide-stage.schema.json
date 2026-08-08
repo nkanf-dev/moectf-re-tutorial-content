@@ -36,6 +36,8 @@
       "properties": {
         "id": { "type": "string" },
         "textKey": { "type": "string" },
+        "bodyKey": { "type": ["string", "null"] },
+        "image": { "$ref": "#/$defs/optionalMediaPath" },
         "action": { "const": "none" },
         "tool": { "type": ["string", "null"] },
         "file": { "type": ["string", "null"] },
@@ -189,6 +191,10 @@
     },
     "scope": { "enum": ["host", "process", "screen", "none"] },
     "adapter": { "enum": ["die", "ida", "ghidra", "dnspy", "x64dbg", "win32"] },
+    "optionalMediaPath": {
+      "type": ["string", "null"],
+      "pattern": "^(assets/media/)?[^\\\\:*?\"<>|]+\\.(png|jpg|jpeg|webp)$"
+    },
     "stringList": {
       "type": "array",
       "items": { "type": "string", "minLength": 1 }
