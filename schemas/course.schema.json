@@ -9,7 +9,11 @@
   "properties": {
     "schemaVersion": { "const": "1" },
     "id": { "$ref": "#/$defs/id" },
-    "version": { "type": "string", "minLength": 1 },
+    "version": {
+      "type": "string",
+      "description": "Semantic version for this course only. It is independent from the catalog and other courses.",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
     "status": { "enum": ["draft", "preview", "published", "archived"], "default": "draft" },
     "metadata": { "$ref": "#/$defs/metadata" },
     "changelog": {
@@ -200,11 +204,21 @@
       "additionalProperties": false,
       "required": ["path"],
       "properties": {
-        "path": { "$ref": "#/$defs/contentPath" },
+        "path": {
+          "allOf": [
+            { "$ref": "#/$defs/contentPath" },
+            { "pattern": "^courses/[^/]+/assets/targets/[^/]+$" }
+          ]
+        },
         "copyMode": { "const": "copy" },
         "companions": {
           "type": "array",
-          "items": { "$ref": "#/$defs/contentPath" },
+          "items": {
+            "allOf": [
+              { "$ref": "#/$defs/contentPath" },
+              { "pattern": "^courses/[^/]+/assets/targets/[^/]+$" }
+            ]
+          },
           "uniqueItems": true,
           "default": []
         }

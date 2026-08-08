@@ -1,6 +1,9 @@
 ﻿{
-    "contentVersion":  "2026.1.4",
+    "schemaVersion":  "1",
+    "catalogVersion":  "1.0.0",
     "courses":  [
-
-                ]
+                    "courses/chall1/course.json"
+                ],
+    "catalogUpdateManifestUrl":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/catalog-update.json",
+    "appUpdateManifestUrl":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/app-update.json"
 }

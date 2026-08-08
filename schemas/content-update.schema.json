@@ -4,10 +4,20 @@
   "title": "MoeCTF RE Tutorial Content Update Manifest",
   "type": "object",
   "additionalProperties": false,
-  "required": ["contentVersion", "schemaVersion", "files"],
+  "required": ["schemaVersion", "files"],
+  "oneOf": [
+    { "required": ["contentVersion"] },
+    { "required": ["courseId", "courseVersion"] }
+  ],
   "properties": {
     "contentVersion": { "type": "string", "minLength": 1 },
+    "courseId": { "$ref": "#/$defs/courseId" },
+    "courseVersion": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
     "schemaVersion": { "const": "1" },
+    "publishedAt": { "type": ["string", "null"], "format": "date-time" },
     "minHostVersion": { "type": "string", "default": "0.1.0" },
     "hostUpdateManifestUrl": { "type": ["string", "null"], "format": "uri" },
     "notes": { "type": ["string", "null"] },
@@ -37,12 +47,17 @@
     }
   },
   "$defs": {
+    "courseId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
     "contentPath": {
       "type": "string",
       "pattern": "^(courses/|stages/|assets/i18n/|assets/media/|schemas/)[^\\\\:*?\"<>|]+$",
       "not": {
         "anyOf": [
           { "pattern": "(^|/)\\.\\.(/|$)" },
+          { "pattern": "(^|/)assets/targets/" },
           { "pattern": "\\.(exe|dll|pdb|id0|id1|id2|nam|til|idb|i64)$" },
           { "pattern": "\\.(deps|runtimeconfig)\\.json$" }
         ]

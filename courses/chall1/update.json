@@ -1,0 +1,110 @@
+﻿{
+    "schemaVersion":  "1",
+    "courseId":  "chall1",
+    "courseVersion":  "1.0.0",
+    "publishedAt":  "2026-08-08T22:08:00.8339136Z",
+    "minHostVersion":  "0.1.0",
+    "hostUpdateManifestUrl":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/app-update.json",
+    "notes":  "Independent raw update for course chall1.",
+    "prune":  true,
+    "delete":  [
+
+               ],
+    "files":  [
+                  {
+                      "path":  "courses/chall1/assets/media/01-die-analysis.png",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/assets/media/01-die-analysis.png",
+                      "sha256":  "78dad72662d3e47e8e2a491aa1ecef5049238d3fceefacd4ecea6ea4c72af1a3"
+                  },
+                  {
+                      "path":  "courses/chall1/assets/media/02-ida-about.png",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/assets/media/02-ida-about.png",
+                      "sha256":  "a90d35bd80d78b3572663d50c8c05e4f2b218cee5a6d7057260f6eebfb106b8c"
+                  },
+                  {
+                      "path":  "courses/chall1/assets/media/03-ida-quick-start.png",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/assets/media/03-ida-quick-start.png",
+                      "sha256":  "57f0d7c067830f0d33fe801683cb19a94bc76f483c0f662bd3239f669b62253c"
+                  },
+                  {
+                      "path":  "courses/chall1/assets/media/04-ida-file-picker.png",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/assets/media/04-ida-file-picker.png",
+                      "sha256":  "7846a5bd397cb9deab8ae6a90b3341592e7910c0a853a0e9311c8dc4cb704c53"
+                  },
+                  {
+                      "path":  "courses/chall1/assets/media/05-ida-load-file.png",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/assets/media/05-ida-load-file.png",
+                      "sha256":  "c3237b852cb4bb6af1bea3473ee5c0ea92da100b1f7654f9becd6730709f6928"
+                  },
+                  {
+                      "path":  "courses/chall1/assets/media/06-ida-analysis-complete.png",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/assets/media/06-ida-analysis-complete.png",
+                      "sha256":  "bb71335dd82c02c2acf916d7c070613f354c52bfcc64c80b3b9bec4fb307dc21"
+                  },
+                  {
+                      "path":  "courses/chall1/assets/media/07-ida-view-menu.png",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/assets/media/07-ida-view-menu.png",
+                      "sha256":  "5458dc22195d5e220302bfa3be20a4bd676920e6970df4eef5e38c9324ce9547"
+                  },
+                  {
+                      "path":  "courses/chall1/assets/media/08-ida-strings.png",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/assets/media/08-ida-strings.png",
+                      "sha256":  "a453377edde5e8dfc3cbe1c2cee1abd51e3f0f313d3354e11bd9a0d9c01f85d9"
+                  },
+                  {
+                      "path":  "courses/chall1/assets/media/09-ida-input-flag-reference.png",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/assets/media/09-ida-input-flag-reference.png",
+                      "sha256":  "6038f71bbdea28f2a9e69152855c208a5b1323a5ae314c4d246872b3450e12b3"
+                  },
+                  {
+                      "path":  "courses/chall1/assets/media/10-ida-xrefs.png",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/assets/media/10-ida-xrefs.png",
+                      "sha256":  "d7a727701b5a4d551c7cd68709a0d25086ccbc70f5404f6e1edea9d522d6bce8"
+                  },
+                  {
+                      "path":  "courses/chall1/assets/media/11-ida-disassembly-main.png",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/assets/media/11-ida-disassembly-main.png",
+                      "sha256":  "121d2b2ce9ca5d49a6d81816e5577a2ed645520ba21bfb9dba9f5644afd951cf"
+                  },
+                  {
+                      "path":  "courses/chall1/assets/media/12-ida-pseudocode.png",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/assets/media/12-ida-pseudocode.png",
+                      "sha256":  "f9e94fac998a63e199941636b609e6d8d8bb891f8465aef1dffcdbe0cf862511"
+                  },
+                  {
+                      "path":  "courses/chall1/course.json",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/course.json",
+                      "sha256":  "b71544f34c44efeddc2d82b1ab4a4678e42bf6ffec4def333d3fa5ecdf91179b"
+                  },
+                  {
+                      "path":  "courses/chall1/i18n/en-US.json",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/i18n/en-US.json",
+                      "sha256":  "b61010a3cd2eb6c2f6badca5a966242ff16d9a1f59e9b69cad1def9b75658475"
+                  },
+                  {
+                      "path":  "courses/chall1/i18n/zh-CN.json",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/i18n/zh-CN.json",
+                      "sha256":  "424a1c97bbb4fdb429a4478c82b7304ffb0229439054ee375d6850fe3cf07cf6"
+                  },
+                  {
+                      "path":  "courses/chall1/stages/die.json",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/stages/die.json",
+                      "sha256":  "36f403cf3c80c24d729c1f4789a15a440345c982388a6040616303d0d28d057e"
+                  },
+                  {
+                      "path":  "courses/chall1/stages/ida-load.json",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/stages/ida-load.json",
+                      "sha256":  "3b18e09cd23fd6917190562c8e1d87d2d5d6e63997dbac98b930c169ee05bd5c"
+                  },
+                  {
+                      "path":  "courses/chall1/stages/index.json",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/stages/index.json",
+                      "sha256":  "eeaffb3792ca14be3f69b1adaee9f57cd04041219c2c43d1a8d8b5e5be3b4bea"
+                  },
+                  {
+                      "path":  "courses/chall1/stages/static-read.json",
+                      "url":  "https://raw.githubusercontent.com/nkanf-dev/moectf-re-tutorial-content/main/courses/chall1/stages/static-read.json",
+                      "sha256":  "f9d4016af51f470846f74db9a37e985754e68db2a5de70453bca5f22333e3ec7"
+                  }
+              ]
+}

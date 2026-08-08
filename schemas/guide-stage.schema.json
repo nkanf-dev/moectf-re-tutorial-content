@@ -11,6 +11,10 @@
     "titleKey": { "type": "string" },
     "goalKey": { "type": "string" },
     "answerKey": { "type": "string" },
+    "completionMode": {
+      "enum": ["answer", "guided", "external_submit"],
+      "default": "answer"
+    },
     "fakeAnswerKeys": { "type": "array", "items": { "type": "string" } },
     "targets": { "type": "array", "items": { "type": "string" } },
     "tools": {
@@ -56,6 +60,8 @@
       "properties": {
         "id": { "type": "string" },
         "textKey": { "type": "string" },
+        "bodyKey": { "type": ["string", "null"] },
+        "image": { "$ref": "#/$defs/optionalMediaPath" },
         "priority": { "type": "integer", "default": 0 },
         "when": { "$ref": "#/$defs/condition" },
         "guide": { "$ref": "#/$defs/guide" }
@@ -106,6 +112,7 @@
         "nameEquals": { "type": "string" },
         "nameContains": { "$ref": "#/$defs/stringList" },
         "contentContains": { "$ref": "#/$defs/stringList" },
+        "documentContains": { "$ref": "#/$defs/stringList" },
         "contentMode": { "enum": ["evidence", "target"] },
         "rejectTitleContains": { "$ref": "#/$defs/stringList" },
         "rejectContentContains": { "$ref": "#/$defs/stringList" },
